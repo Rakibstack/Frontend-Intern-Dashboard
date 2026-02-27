@@ -1,10 +1,11 @@
 import { Bell, CircleUserRound, Donut, Mail } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
+import DashboardHeader from '../components/DashboardHeader';
 
 const Dashboard =  () => {
 
-    const userId = localStorage.getItem('userId');
-    const [user, setUser] = useState(null)
+   const userId = localStorage.getItem('userId');
+   const [user, setUser] = useState(null)
 
     useEffect( () => {
 
@@ -33,12 +34,12 @@ const Dashboard =  () => {
             <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
                 {/* Navbar */}
-                <nav className="navbar w-full bg-base-300">
+                <nav className="navbar p-2 rounded-2xl ml-2 mt-2 bg-base-300">
                     {/* side drawer icon */}
                     <label htmlFor="my-drawer-4" aria-label="open sidebar" className="btn btn-square btn-ghost">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor" className="my-1.5 inline-block size-4"><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M9 4v16"></path><path d="M14 10l2 2l-2 2"></path></svg>
                     </label>
-                    <div className='flex justify-between items-center w-full pr-8'>
+                    <div className=' md:flex justify-between items-center w-full pr-6'>
                         <div>
                             <label className="input rounded-4xl border-none">
                                 <svg className="h-[1.5em] text-black opacity-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -56,7 +57,7 @@ const Dashboard =  () => {
                                 <input type="search" required placeholder="Search Task" />
                             </label>
                         </div>
-                        <div className='flex gap-3 items-center  justify-center'>
+                        <div className='mt-4 md:mt-0 flex gap-3 items-center  justify-center'>
                             <span className='p-3 bg-gray-50 rounded-full'><Mail width={20} height={20} className="text-gray-600" /></span>
                             <span className='p-3 bg-gray-50 rounded-full'><Bell width={20} height={20} className="text-gray-600" /></span>
                             <div className='flex items-center justify-center gap-2'>
@@ -72,7 +73,12 @@ const Dashboard =  () => {
                     </div>
                 </nav>
                 {/* Page content here */}
-                <div className="p-4">Page Content</div>
+                <div className="p-4 mt-2 ml-2 rounded-2xl bg-base-300 min-h-screen">
+
+                   <DashboardHeader></DashboardHeader>
+
+
+                </div>
             </div>
 
             <div className="drawer-side is-drawer-close:overflow-visible">
@@ -90,7 +96,7 @@ const Dashboard =  () => {
                         <li>
                             <button className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Dashboard">
                                 {/* Dashboard icon */}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" className='text-green-700' stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-dashboard-icon lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" className='text-[#117d54]' stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-dashboard-icon lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
                                 <span className="is-drawer-close:hidden font-bold ">Dashboard</span>
                             </button>
                         </li>
