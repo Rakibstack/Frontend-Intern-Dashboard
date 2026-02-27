@@ -9,7 +9,7 @@ const Login = () => {
 
     // Handle login logic here
     const HandleLogIn = async (e) => {
-        
+
         e.preventDefault();
         const form = e.target;
 
@@ -35,6 +35,8 @@ const Login = () => {
         console.log(data);
 
         localStorage.setItem('token',data.token);
+        localStorage.setItem('userId',data.id);
+        localStorage.setItem('email',data.email);
         navigate('/')
         form.reset();
        }

@@ -1,9 +1,32 @@
 import { Bell, CircleUserRound, Donut, Mail } from 'lucide-react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const Dashboard = () => {
+const Dashboard =  () => {
 
+    const userId = localStorage.getItem('userId');
+    const [user, setUser] = useState(null)
 
+    useEffect( () => {
+
+        if(!userId) return;
+
+        const fetchUser = async () => {
+            try{
+                const res = await fetch(`https://task-api-eight-flax.vercel.app/api/users/${userId}`);
+
+                if(!res.ok){
+                    throw new Error("Failed to fetch user data");
+                }
+                const data = await res.json();
+                setUser(data);
+            }
+            catch(error){
+                console.error(error.message);
+            }
+        }
+           fetchUser();
+
+    },[userId])
 
     return (
         <div className="drawer lg:drawer-open">
@@ -36,11 +59,11 @@ const Dashboard = () => {
                         <div className='flex gap-3 items-center  justify-center'>
                             <span className='p-3 bg-gray-50 rounded-full'><Mail width={20} height={20} className="text-gray-600" /></span>
                             <span className='p-3 bg-gray-50 rounded-full'><Bell width={20} height={20} className="text-gray-600" /></span>
-                            <div>
-                                <img src='' alt="" />
+                            <div className='flex items-center justify-center gap-2'>
+                                <img src={user?.avatar || ''} alt="User Avatar" className="w-10 h-10 rounded-full object-cover" />
                                 <div>
-                                    <h2 className='font-bold'>Name</h2>
-                                    <p>Email</p>
+                                    <h2 className='font-bold'>{user?.name || 'Guest User'}</h2>
+                                    <p>{user?.email || 'No Email'}</p>
                                 </div>
                             </div>
                         </div>
@@ -78,6 +101,7 @@ const Dashboard = () => {
                                 <span className="is-drawer-close:hidden ">Tasks</span>
                             </button>
                         </li>
+                        
                         <li>
                             <button className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Calender">
                                 {/* Calender icon */}
