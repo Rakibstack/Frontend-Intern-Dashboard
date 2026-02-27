@@ -1,8 +1,11 @@
 
 import { Mail, Lock, Donut, HandHeart } from "lucide-react";
 import React from 'react';
+import { useNavigate } from "react-router";
 
 const Login = () => {
+
+    const navigate = useNavigate();
 
     // Handle login logic here
     const HandleLogIn = async (e) => {
@@ -16,17 +19,28 @@ const Login = () => {
             email,
             password
         }
-        const res = await fetch("https://task-api-eight-flax.vercel.app/api/login", {
+       try{
+         const res = await fetch("https://task-api-eight-flax.vercel.app/api/login", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
             },
             body: JSON.stringify(user)
         })
+        if (!res.ok) {
+            throw new Error("Invalid email or password");
+        }
         const data = await res.json();
         console.log(data);
+
+        localStorage.setItem('token',data.token);
+        navigate('/')
         form.reset();
+       }
+         catch(error){
+            console.error(error.message);
     }
+}
 
     return (
         <div className='flex items-center justify-center min-h-screen bg-gray-100'>
