@@ -4,6 +4,7 @@ import DashboardHeader from '../components/DashboardHeader';
 import DashboardOverview from '../components/DashboardOverview';
 import ProjectAnalytics from '../components/ProjectAnalytics ';
 import DashboardMiddleSection from '../components/DashboardMiddleSection';
+import image from '../assets/userImage.png'
 
 const Dashboard =  () => {
 
@@ -64,7 +65,7 @@ const Dashboard =  () => {
                             <span className='p-3 bg-gray-50 rounded-full'><Mail width={20} height={20} className="text-gray-600" /></span>
                             <span className='p-3 bg-gray-50 rounded-full'><Bell width={20} height={20} className="text-gray-600" /></span>
                             <div className='flex items-center justify-center gap-2'>
-                                <img src={user?.avatar || ''} alt="User Avatar" className="w-10 h-10 rounded-full object-cover" />
+                                <img src={image || ''} alt="User Avatar" className="w-12 h-12 rounded-full object-cover" />
                                 <div>
                                     <h2 className='font-bold'>{user?.name || 'Guest User'}</h2>
                                     <p>{user?.email || 'No Email'}</p>
