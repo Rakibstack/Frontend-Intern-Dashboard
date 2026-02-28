@@ -1,16 +1,63 @@
-# React + Vite
+# DONEZO – Task Management Dashboard (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DONEZO is a modern, responsive task management dashboard built with **React**.  
+This project was developed as part of a **Frontend Intern technical assignment**, focusing on UI accuracy, authentication flow, and API integration.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
+🔗 https://frontend-intern-dashboard.netlify.app/
 
-## React Compiler
+Login credentials,
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Email: user1@example.com
+Password: password123
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- **React** (Vite)
+- **React Router DOM**
+- **Tailwind CSS**
+- **DaisyUI**
+- **Lucide React Icons**
+- **REST API** (provided)
+
+---
+
+## ✨ Features
+
+### 🔐 Authentication
+- Login using provided REST API
+- JWT token stored in `localStorage`
+- Protected routes using `PrivateRoute`
+- Redirects unauthenticated users to Login page
+
+### 📊 Dashboard
+- Project Analytics (Bar Chart)
+- Reminders Section
+- Project List
+- Team Collaboration
+- Project Progress (Circular Progress UI)
+- Time Tracker UI
+
+### 📱 Responsive Design
+- Fully responsive layout
+- Optimized for desktop and tablet screens
+- Mobile-friendly grid structure
+
+---
+
+## 🧩 Pages
+
+- **Login Page**
+  - Email & Password authentication
+  - Error handling for invalid credentials
+
+- **Dashboard Page**
+  - Accessible only after successful login
+  - Data fetched from REST API
+  - Structured using reusable components
+
+---
