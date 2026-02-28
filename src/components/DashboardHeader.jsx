@@ -7,7 +7,7 @@ const DashboardHeader = () => {
     return (
         <div className='flex justify-between  items-center p-2'>
             <div>
-                <h1 className="text-4xl font-medium mb-2">Dashboard</h1>
+                <h1 className="text-4xl font-medium mb-1">Dashboard</h1>
                 <p className="text-[#4f7566] opacity-80">Plan, prioritize, and manage your tasks efficiently.</p>
             </div>
             <div className='md:flex '>
