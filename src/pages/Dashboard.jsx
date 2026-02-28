@@ -2,9 +2,9 @@ import { Bell, CircleUserRound, Donut, Mail } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import DashboardHeader from '../components/DashboardHeader';
 import DashboardOverview from '../components/DashboardOverview';
-import ProjectAnalytics from '../components/ProjectAnalytics ';
 import DashboardMiddleSection from '../components/DashboardMiddleSection';
 import image from '../assets/userImage.png'
+import DashboardBottomSection from '../components/DashboardBottomSection ';
 
 const Dashboard =  () => {
 
@@ -81,8 +81,8 @@ const Dashboard =  () => {
 
                    <DashboardHeader></DashboardHeader>
                    <DashboardOverview></DashboardOverview>
-                   {/* <ProjectAnalytics></ProjectAnalytics> */}
                    <DashboardMiddleSection></DashboardMiddleSection>
+                   <DashboardBottomSection></DashboardBottomSection>
 
 
                 </div>

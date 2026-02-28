@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 const DashboardMiddleSection = () => {
 
-    const [product, setProduct] = useState(null)
+    const [product, setProduct] = useState([])
 
     const analytics = [
         { day: "S", h: 70, active: false },
@@ -21,19 +21,12 @@ const DashboardMiddleSection = () => {
 
         const res = await fetch('https://task-api-eight-flax.vercel.app/api/products')
         const data = await res.json()
-        console.log('product data',data);
+        // console.log('product data',data);
         
         setProduct(data)
         }
         fetchProduct()
     }, [])
-
-    //   const projects = [
-    //     { title: "Develop API Endpoints", date: "Nov 26, 2024" },
-    //     { title: "Onboarding Flow", date: "Nov 28, 2024" },
-    //     { title: "Build Dashboard", date: "Nov 30, 2024" },
-    //     { title: "Optimize Page Load", date: "Dec 3, 2024" },
-    //   ];
 
     return (
         <div className="grid grid-cols-12 mt-3  gap-6">
