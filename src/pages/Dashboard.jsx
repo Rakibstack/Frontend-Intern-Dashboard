@@ -1,6 +1,7 @@
 import { Bell, CircleUserRound, Donut, Mail } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import DashboardHeader from '../components/DashboardHeader';
+import DashboardOverview from '../components/DashboardOverview';
 
 const Dashboard =  () => {
 
@@ -76,6 +77,7 @@ const Dashboard =  () => {
                 <div className="p-4 mt-2 ml-2 rounded-2xl bg-base-300 min-h-screen">
 
                    <DashboardHeader></DashboardHeader>
+                   <DashboardOverview></DashboardOverview>
 
 
                 </div>
