@@ -1,7 +1,9 @@
 
+import { Play } from "lucide-react";
 import React from "react";
 
 const DashboardBottomSection = () => {
+
   const team = [
     {
       name: "Alexandra Deff",
@@ -32,7 +34,6 @@ const DashboardBottomSection = () => {
   return (
     <div className="grid grid-cols-12 gap-6 mt-6">
 
-      {/* ================= Team Collaboration ================= */}
       <div className="col-span-12 lg:col-span-6 bg-white rounded-2xl p-5 shadow-sm">
         <div className="flex justify-between items-center mb-4">
           <h3 className="font-semibold text-lg">Team Collaboration</h3>
@@ -67,13 +68,11 @@ const DashboardBottomSection = () => {
         </div>
       </div>
 
-      {/* ================= Project Progress ================= */}
       <div className="col-span-12 lg:col-span-3 bg-white rounded-2xl p-5 shadow-sm flex flex-col items-center justify-center">
-        <h3 className="font-semibold text-lg mb-4 self-start">
+        <h3 className="font-semibold text-lg mb-4 self-start ">
           Project Progress
         </h3>
 
-        {/* Progress Ring */}
         <div className="relative w-40 h-40">
           <div className="absolute inset-0 rounded-full border-[10px] border-gray-200"></div>
           <div className="absolute inset-0 rounded-full border-[10px] border-[#1F7A57] border-t-transparent rotate-[220deg]"></div>
@@ -84,7 +83,6 @@ const DashboardBottomSection = () => {
           </div>
         </div>
 
-        {/* Legend */}
         <div className="flex gap-4 text-xs text-gray-500 mt-4">
           <span className="flex items-center gap-1">
             <i className="w-2 h-2 bg-[#1F7A57] rounded-full"></i> Completed
@@ -98,7 +96,6 @@ const DashboardBottomSection = () => {
         </div>
       </div>
 
-      {/* ================= Time Tracker ================= */}
       <div className="col-span-12 lg:col-span-3 bg-gradient-to-br from-[#0F3D2E] to-[#1F7A57] rounded-2xl p-5 text-white shadow-sm">
         <h3 className="font-semibold text-lg mb-4">Time Tracker</h3>
 
@@ -111,7 +108,7 @@ const DashboardBottomSection = () => {
             ❚❚
           </button>
           <button className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center">
-            ●
+            <Play width={22} />
           </button>
         </div>
       </div>
