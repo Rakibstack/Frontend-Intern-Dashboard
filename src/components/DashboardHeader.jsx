@@ -11,7 +11,7 @@ const DashboardHeader = () => {
                 <p className="text-[#4f7566] opacity-80">Plan, prioritize, and manage your tasks efficiently.</p>
             </div>
             <div className='flex'>
-                <div className="bg-[#1F7A57] flex items-center  text-white/90 font-medium px-6 py-3 rounded-4xl mr-3 hover:bg-[#0F3D2E] duration-150 transition-all cursor-pointer">
+                <div className="bg-[#32785d] flex items-center  text-white/90 font-medium px-6 py-3 rounded-4xl mr-3 hover:bg-[#0F3D2E] duration-150 transition-all cursor-pointer">
                     <Plus width={20} className='mr-2 '></Plus>
                 <button className='cursor-pointer'> Add Project</button>
                 </div>
